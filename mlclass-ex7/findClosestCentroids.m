@@ -23,7 +23,16 @@ idx = zeros(size(X,1), 1);
 
 
 
-
+for i = 1:size(X,1)
+    min = 10000000;
+    for j = 1:K
+        distance = sum((X(i,:) - centroids(j,:)).^2);
+        if (distance < min)
+            min = distance;
+            idx(i) = j;
+        endif
+    endfor
+endfor
 
 
 
