@@ -23,7 +23,9 @@ sigma2 = zeros(n, 1);
 
 
 
-
+mu = mean(X,1)';
+% trick D(X)= E(X^2) - E(X)^2
+sigma2 = mean(X.*X,1)' - mu.*mu;
 
 
 
